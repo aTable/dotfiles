@@ -1,0 +1,6 @@
+.titlebar-buttonbox-container {
+  display: none;
+}
+.titlebar-spacer[type="post-tabs"] {
+  display: none;
+}
