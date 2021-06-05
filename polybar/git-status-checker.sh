@@ -10,6 +10,7 @@ total_commits_unpushed=0
 
 analyzeRepo () {
     pathToRepo=$1
+    #echo $pathToRepo
     cd $pathToRepo
     CURRENT_BRANCH_STATUS=$(git status -sb)
     CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)

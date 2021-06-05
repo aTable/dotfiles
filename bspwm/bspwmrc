@@ -6,7 +6,7 @@ picom &
 # monitor
 xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 &
 # disable Display Power Management Signaling. https://wiki.archlinux.org/index.php/Display_Power_Management_Signaling
-xset s off &
+xset s off -dpms
 # theming
 nitrogen --restore & # nitrogen --save --set-centered /path/to/image.png
 # keyboard
