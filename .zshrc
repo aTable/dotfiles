@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 ################################ User configuration ###########################
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-export PATH=$PATH:$HOME/repos/aur-packages/lazygit/pkg/lazygit/usr/bin:$HOME/.local/bin:$HOME/.linkerd2/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.linkerd2/bin
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export TERM=alacritty
 export GTK_THEME=Dracula
