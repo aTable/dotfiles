@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # loose files
-cp -f ~/.xinitrc ./xinitrc
+cp -f ~/.xinitrc ./.xinitrc
+cp -f ~/.zshrc ./.zshrc
 
 mkdir -p ./alacritty 
 cp -f ~/.config/alacritty/alacritty.yml ./alacritty/alacritty.yml
