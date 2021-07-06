@@ -30,8 +30,8 @@ purple = #bd93f9
 red = #ff5555
 yellow = #f1fa8c
 
-[bar/beast]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/monitor-main]
+monitor = ${env:MONITOR:}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -41,19 +41,14 @@ fixed-center = false
 enable-ipc = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = 2
 line-color = ${colors.orange}
-
 border-size = 0
 border-color = ${colors.background}
-
 padding-left = 0
 padding-right = 2
-
 module-margin-left = 1
 module-margin-right = 2
-
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
@@ -65,22 +60,60 @@ modules-center =
 ;modules-center = mpd;
 modules-right = fs-root fs-home repository-checker pulseaudio xkeyboard cpu memory wlan eth temperature date
 ;modules-right = filesystem repository-checker mytest2 xbacklight alsa pulseaudio xkeyboard cpu memory wlan eth battery temperature date powermenu
-
 tray-position = right
 tray-padding = 2
 ;tray-background = ${colors.background}
-
 wm-restack = bspwm
 override-redirect = true
-
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
-
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
-
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/monitor-auxiliary]
+monitor = HDMI-A-0
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 2
+line-color = ${colors.orange}
+border-size = 0
+border-color = ${colors.background}
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=12;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=12;1"
+modules-left = bspwm
+modules-center = 
+;modules-center = mpd;
+modules-right = repository-checker
+;modules-right = filesystem repository-checker mytest2 xbacklight alsa pulseaudio xkeyboard cpu memory wlan eth battery temperature date powermenu
+tray-position = right
+tray-padding = 2
+;tray-background = ${colors.background}
+wm-restack = bspwm
+override-redirect = true
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 
 [module/repository-checker]
 type = custom/script

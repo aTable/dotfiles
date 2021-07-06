@@ -122,15 +122,15 @@ super + {Left,Down,Up,Right}
 # 
 # MOUSE 
 # 
-super + alt + u
+super + ctrl + alt + h
 	xdotool mousemove_relative -- -10 0
-super + alt + p
+super + ctrl + alt + l
 	xdotool mousemove_relative 10 0
-super + alt + i
+super + ctrl + alt + j
 	xdotool mousemove_relative 0 10
-super + alt + o
+super + ctrl + alt + k
 	xdotool mousemove_relative -- 0 -10
-super + alt + bracket{left}
+super + ctrl + alt + space
 	xdotool click --clearmodifiers 1
 super + alt + bracket{right}
 	xdotool click --clearmodifiers 3

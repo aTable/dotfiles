@@ -9,6 +9,7 @@ cp -f ~/.config/alacritty/alacritty.yml ./alacritty/alacritty.yml
 
 mkdir -p ./bspwm
 cp -f ~/.config/bspwm/bspwmrc ./bspwm/bspwmrc
+cp -f ~/.config/bspwm/external_rules ./bspwm/external_rules
 
 mkdir -p ./neofetch 
 cp -f ~/.config/neofetch/config.conf ./neofetch/config.conf
