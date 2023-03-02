@@ -32,7 +32,7 @@ configuration {
     yellow: rgba(241,250,140,100%);
 
     /* Base */
-    default-background: rgba(40, 42, 54, 95%); // <- change this for transparency
+    default-background: rgba(40, 42, 54, 95%);
     default-foreground: rgba(248, 248, 242, 100%);
     default-border: rgba(189, 147, 249, 100%);
     alternative-background: rgba(40, 42, 54, 100%);
@@ -80,7 +80,7 @@ configuration {
 }
 
 #textbox {
-    background-color: @entry-background;
+    background-color: @background;
 }
 
 #listview {

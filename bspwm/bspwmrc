@@ -14,7 +14,7 @@ COLOR_RED=#ff5555
 COLOR_YELLOW=#f1fa8c
 
 ### monitor
-xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 --primary 
+xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 --primary 
 bspc monitor DisplayPort-1 -d I II III IV V 
 #xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --same-as DisplayPort-1 &
 xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --left-of DisplayPort-1 
@@ -51,6 +51,7 @@ bspc config presel_feedback_color  $COLOR_BACKGROUND
 # bspc config external_rules_command "$(which external_rules)"
 
 ### default programs to launch
+/usr/bin/dunst
 firefox &
 bspc rule -a --one-shot firefox desktop=2
 firefox --private-window &
@@ -59,3 +60,4 @@ firefox --private-window &
 
 ### status task bar
 $HOME/.config/polybar/launch.sh &
+# notify-send "Welcome" "Take a break and have a coffee while we initialize your system ..." --icon=  -h int:value:89
