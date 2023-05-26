@@ -84,3 +84,5 @@ PROMPT="%F{${dracula_theme[cyan]}}%n%f%F{${dracula_theme[comment]}}@%f%F{${dracu
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+alias startsshagentandadd='eval $(ssh-agent -s) && ssh-add ' 

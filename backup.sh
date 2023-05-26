@@ -31,4 +31,5 @@ cp -f ~/.config/rofi/dracula.rasi ./rofi/dracula.rasi
 mkdir -p ./sxhkd
 cp -f ~/.config/sxhkd/sxhkdrc ./sxhkd/sxhkdrc
 
-
+mkdir -p ./dunst
+cp -f ~/.config/dunst/dunstrc ./dunst/dunstrc
