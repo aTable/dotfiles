@@ -82,7 +82,17 @@ zstyle ':vcs_info:git:*' formats "%F{${dracula_theme[comment]}}%r (%b) (%a) %m%u
 PROMPT="%F{${dracula_theme[cyan]}}%n%f%F{${dracula_theme[comment]}}@%f%F{${dracula_theme[cyan]}}%m%f%F{${dracula_theme[comment]}}:%f%F{${dracula_theme[purple]}}%~%f %F{${dracula_theme[comment]}}[%*]%f%B%#%b " 
 
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh_plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 
 alias startsshagentandadd='eval $(ssh-agent -s) && ssh-add ' 
+alias ls='ls -lah'
+
+# automatically start the X server at login
+#if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+#  exec startx ~/.config/.xinitrc
+#fi
+
+[ "$(tty)" = "/dev/tty1" ] && exec sway

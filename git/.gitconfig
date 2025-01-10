@@ -1,0 +1,9 @@
+...
+
+
+[alias]
+	lg = log --color --decorate=auto --graph --pretty=format:\"%C(yellow)%h%Creset %C(auto)%d%Creset %s (%C(green)%ar%Creset) %C(bold blue)<a:%an,c:%cn>%Creset\"
+	s = status -sb
+
+
+...
