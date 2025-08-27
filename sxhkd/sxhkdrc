@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + @space
-	rofi -show run
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -23,7 +23,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -34,9 +34,9 @@ super + m
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest node
+# swap the current node and the biggest window
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.window
 
 #
 # state/flags
@@ -62,9 +62,9 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# focus the next/previous window in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -119,30 +119,12 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-# 
-# MOUSE 
-# 
-super + ctrl + alt + h
-	xdotool mousemove_relative -- -10 0
-super + ctrl + alt + l
-	xdotool mousemove_relative 10 0
-super + ctrl + alt + j
-	xdotool mousemove_relative 0 10
-super + ctrl + alt + k
-	xdotool mousemove_relative -- 0 -10
-super + ctrl + alt + space
-	xdotool click --clearmodifiers 1
-super + alt + bracket{right}
-	xdotool click --clearmodifiers 3
-# media controls
-XF86AudioRaiseVolume
-	amixer sset Master 5%+
 
 XF86AudioLowerVolume
-	amixer sset Master 5%-
+	wpctl set-volume 52 0.1-
 
-# polybar controls
-#super + alt + p
-#	polybar-msg cmd show
-#super + shift + alt + p
-#	polybar-msg cmd hide
+XF86AudioRaiseVolume
+	wpctl set-volume 52 0.1+
+
+XF86AudioMute
+	wpctl set-mute 52 toggle

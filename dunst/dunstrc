@@ -27,13 +27,13 @@
     width = 500
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = (0,300)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 10x80
+    offset = (15,49)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -59,7 +59,10 @@
 
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
-
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    icon_corner_radius = 0
+    icon_corners = all
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -68,7 +71,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    transparency = 5
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -77,26 +80,26 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 6
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 6
 
     # Padding between text and icon.
     text_icon_padding = 0
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#bd93f9"
+    frame_color = "#8EC07C"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 8
+    gap_size = 0
 
     # Define a color for the separator.
     # possible values are:
@@ -107,7 +110,7 @@
     separator_color = frame
 
     # Sort messages by urgency.
-    sort = yes
+    sort = no
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -118,11 +121,12 @@
 
     ### Text ###
 
-    font = Monospace 18
+    font = "Font Awesome 7 Free,Monospace 11"
+
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 1
+    line_height = 3
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -158,11 +162,11 @@
     #   %n  progress value if set without any extra characters. Use '-h int:value:55'
     #   %%  Literal %
     # Markup is allowed
-    format = "%i<b> %s</b>\n%b\n%p"
+    format = "<b>%s</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -171,7 +175,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
@@ -184,10 +188,10 @@
     stack_duplicates = true
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -213,7 +217,7 @@
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
 #    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-     icon_path = ~/.config/assets/fontawesome-free-6.7.2-desktop/svgs/
+     icon_path = /usr/share/fonts/WOFF2/fa-regular-400.woff2
 
     ### History ###
 
@@ -222,7 +226,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 20
+    history_length = 15
 
     ### Misc/Advanced ###
 
@@ -247,7 +251,7 @@
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
     corner_radius = 0
-
+    corners = all
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
     # parameter, an application may close the notification sent before the
@@ -311,14 +315,17 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282a36"
     foreground = "#f8f8f2"
-    timeout = 10
+    frame_color = "#50fa7b"
+    timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#282a36"
     foreground = "#f8f8f2"
-    timeout = 10
+    frame_color = "#f8f8f2"
+    timeout = 6
+    override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -326,7 +333,8 @@
     background = "#282a36"
     foreground = "#f8f8f2"
     frame_color = "#ff5555"
-    timeout = 0
+    timeout = 10
+    override_pause_level = 60
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 

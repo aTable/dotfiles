@@ -81,10 +81,10 @@ zstyle ':vcs_info:git:*' formats "%F{${dracula_theme[comment]}}%r (%b) (%a) %m%u
 
 PROMPT="%F{${dracula_theme[cyan]}}%n%f%F{${dracula_theme[comment]}}@%f%F{${dracula_theme[cyan]}}%m%f%F{${dracula_theme[comment]}}:%f%F{${dracula_theme[purple]}}%~%f %F{${dracula_theme[comment]}}[%*]%f%B%#%b " 
 
-
-source ~/.zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh_plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 alias startsshagentandadd='eval $(ssh-agent -s) && ssh-add ' 
@@ -95,4 +95,4 @@ alias ls='ls -lah'
 #  exec startx ~/.config/.xinitrc
 #fi
 
-[ "$(tty)" = "/dev/tty1" ] && exec sway
+#[ "$(tty)" = "/dev/tty1" ] && exec sway

@@ -13,11 +13,13 @@ COLOR_PURPLE=#bd93f9
 COLOR_RED=#ff5555
 COLOR_YELLOW=#f1fa8c
 
+pgrep -x sxhkd > /dev/null || sxhkd &
 ### monitor
+bspc monitor -d I II III IV V VI VII VIII IX X
 # to reconfigure monitors, run 'xrandr' to view available configurations
-PRIMARY_MONITOR_NAME=DP-6
-xrandr --output $PRIMARY_MONITOR_NAME --mode 3440x1440 --rate 144 --primary 
-bspc monitor $PRIMARY_MONITOR_NAME -d I II III IV V 
+#PRIMARY_MONITOR_NAME=DP-6
+#xrandr --output $PRIMARY_MONITOR_NAME --mode 3440x1440 --rate 144 --primary 
+#bspc monitor $PRIMARY_MONITOR_NAME -d I II III IV V 
 #xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --same-as DisplayPort-1 &
 #xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --left-of DisplayPort-1 
 #bspc monitor HDMI-A-0 -d I II VI VII VIII IX X 
@@ -55,11 +57,8 @@ bspc config presel_feedback_color  $COLOR_BACKGROUND
 ### default programs to launch
 /usr/bin/dunst &
 firefox &
-bspc rule -a --one-shot firefox desktop=2
-firefox --private-window &
-#code &
 
 
 ### status task bar
 $HOME/.config/polybar/launch.sh &
-# notify-send "Welcome" "Take a break and have a coffee while we initialize your system ..." --icon=  -h int:value:89
+#notify-send "Welcome" "Take a break and have a coffee while we initialize your system ..." --icon=  -h int:value:89

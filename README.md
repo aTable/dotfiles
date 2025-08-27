@@ -2,6 +2,14 @@
 
 My list of dotfiles 
 
+## Install steps
+
+```sh
+chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/bspwm/bspwmrc
+cp ~/.config/xorg/.xinitrc ~/.xinitrc
+cp ~/.config/zsh/.zshrc ~/.zshrc
+```
 ## Environment Setup
 
 ### Debian 
