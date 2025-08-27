@@ -9,6 +9,7 @@ chmod +x ~/.config/polybar/launch.sh
 chmod +x ~/.config/bspwm/bspwmrc
 cp ~/.config/xorg/.xinitrc ~/.xinitrc
 cp ~/.config/zsh/.zshrc ~/.zshrc
+ln -s ~/.config/zsh/.zshrc ~/.zshrc
 ```
 ## Environment Setup
 

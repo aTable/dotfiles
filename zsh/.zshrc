@@ -91,8 +91,8 @@ alias startsshagentandadd='eval $(ssh-agent -s) && ssh-add '
 alias ls='ls -lah'
 
 # automatically start the X server at login
-#if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-#  exec startx ~/.config/.xinitrc
-#fi
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec startx ~/.config/xorg/.xinitrc
+fi
 
 #[ "$(tty)" = "/dev/tty1" ] && exec sway
