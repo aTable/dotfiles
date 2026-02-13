@@ -54,4 +54,10 @@ fi
 #"$xterm" -geometry 80x50+494+51 &
 #"$xterm" -geometry 80x20+494-0 &
 #exec "$xterm" -geometry 80x66+0+0 -name login
+
+monitor_output=$(xrandr | grep ' connected' | awk '{print $1}')
+monitor_mode=$(xrandr | grep ' connected' | awk '{print $3}' | sed 's/+.*//')
+monitor_refresh_rate=144
+xrandr --output ${monitor_output} --mode ${monitor_mode} --rate ${monitor_refresh_rate}
+
 exec bspwm
