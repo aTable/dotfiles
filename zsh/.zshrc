@@ -86,13 +86,21 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export EDITOR=nvim
 
 alias startsshagentandadd='eval $(ssh-agent -s) && ssh-add ' 
 alias ls='ls -lah'
+alias startmusicstudio='WINEARCH=win64 WINEPREFIX=~/.wine-music-studio wine . & disown'
+alias startmusicstudioarturiasoftwarecentre='WINEARCH=win64 WINEPREFIX=~/.wine-music-studio wine "C:/Program Files (x86)/Arturia/Arturia Software Center/Arturia Software Center.exe"'
+alias startwine='WINEARCH=win64 WINEPREFIX=~/.wine-music-studio wine "." & disown'
+alias startwinecfg='WINEARCH=win64 WINEPREFIX=~/.wine-music-studio winecfg & disown'
+alias yabridgesync='yabridgectl sync'
 
 # automatically start the X server at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec startx ~/.config/xorg/.xinitrc
+  #exec startx ~/.config/xorg/.xinitrc
+  start-hyprland
+  pw-metadata -n settings 0 clock.force-quantum 128
 fi
 
 #[ "$(tty)" = "/dev/tty1" ] && exec sway

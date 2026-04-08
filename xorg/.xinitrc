@@ -59,5 +59,4 @@ monitor_output=$(xrandr | grep ' connected' | awk '{print $1}')
 monitor_mode=$(xrandr | grep ' connected' | awk '{print $3}' | sed 's/+.*//')
 monitor_refresh_rate=144
 xrandr --output ${monitor_output} --mode ${monitor_mode} --rate ${monitor_refresh_rate}
-
 exec bspwm

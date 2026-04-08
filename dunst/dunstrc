@@ -121,7 +121,7 @@
 
     ### Text ###
 
-    font = "Font Awesome 7 Free,Monospace 11"
+    font = "Font Awesome 7 Free,Papirus,Monospace 11"
 
 
     # The spacing between lines.  If the height is smaller than the
@@ -200,7 +200,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = "Font Awesome 6"
+    icon_theme = "Papirus,Font Awesome 6"
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -217,7 +217,8 @@
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
 #    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-     icon_path = /usr/share/fonts/WOFF2/fa-regular-400.woff2
+     #icon_path = /usr/share/fonts/WOFF2/fa-regular-400.woff2
+     icon_path = /usr/share/icons/
 
     ### History ###
 
