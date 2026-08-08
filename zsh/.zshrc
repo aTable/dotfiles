@@ -99,7 +99,7 @@ alias yabridgesync='yabridgectl sync'
 # automatically start the X server at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   #exec startx ~/.config/xorg/.xinitrc
-  start-hyprland
+  start-hyprland --config ~/.config/hypr/hyprland.lua
   pw-metadata -n settings 0 clock.force-quantum 128
 fi
 
