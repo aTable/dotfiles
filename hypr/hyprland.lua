@@ -37,7 +37,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "alacritty"
 local fileManager = "thunar"
-local menu        = "rofi -show run"
+local menu        = "rofi"
 
 
 -------------------
@@ -269,7 +269,7 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 --hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 --hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu .. " " .. "-show drun"))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 --hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -366,4 +366,32 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+hl.window_rule({
+	name = "reaper",
+	match = { class = "REAPER" },
+	workspace = 5,
+})
+hl.window_rule({
+	name = "wine",
+	match = { class = "explorer.exe", title = "Wine Desktop", },
+	workspace = 6,
+	float = true,
+	center = true,
+})
+hl.window_rule({
+	name = "qjackctl",
+	match = { class = "org.rncbc.qjackctl" },
+	workspace = 9,
+})
+hl.window_rule({
+	name = "qpwgraph",
+	match = { class = "org.rncbc.qpwgraph" },
+	workspace = 9,
+})
+hl.window_rule({
+	name = "steam",
+	match = { class = "steam", title = "steam" },
+	workspace = 0,
 })
