@@ -50,7 +50,7 @@ local menu        = "rofi"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
+ -- hl.exec_cmd(terminal)
   hl.exec_cmd("nm-applet")
  -- hl.exec_cmd("waybar & hyprpaper & firefox")
   hl.exec_cmd("waybar & firefox")
@@ -393,5 +393,5 @@ hl.window_rule({
 hl.window_rule({
 	name = "steam",
 	match = { class = "steam", title = "steam" },
-	workspace = 0,
+	workspace = 7,
 })
